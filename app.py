@@ -1,28 +1,11 @@
-import streamlit as st
+from src.components.sidebar import show_sidebar
+from src.navigation.router import route_page
+from src.utils.session import initialize_session_state
 
-st.set_page_config(
-    page_title="Smart Dataset Analyzer",
-    page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+def main():
+    initialize_session_state()
+    selected_page = show_sidebar()
+    route_page(selected_page)
 
-st.title("📊 Smart Dataset Analyzer")
-
-st.markdown(
-    """
-    Welcome to **Smart Dataset Analyzer**.
-
-    This application will help you:
-
-    - Upload CSV datasets
-    - Analyze data quality
-    - Explore statistics
-    - Visualize data
-    - Detect outliers
-    - Get feature engineering suggestions
-    - Generate professional reports
-
-    🚀 Let's begin by building this project step by step.
-    """
-)
+if __name__ == "__main__":
+    main()
