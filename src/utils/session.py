@@ -13,7 +13,9 @@ def initialize_session_state():
         "dataset_name": None,
         "analysis_completed": False,
         "current_page": "🏠 Home",
-        "uploader_key": 0
+        "uploader_key": 0,
+        "dataset_loaded": False,
+        "validation_errors": [],
     }
 
     for key, value in defaults.items():

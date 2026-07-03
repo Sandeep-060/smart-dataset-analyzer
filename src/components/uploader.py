@@ -44,8 +44,17 @@ def show_file_uploader():
             f"📊 Rows : {st.session_state.dataframe.shape[0]} | "
             f"Columns : {st.session_state.dataframe.shape[1]}"
         )
-        if st.button("🗑 Clear Dataset"):
-            clear_uploaded_file()
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            if st.button("📊 Go to Dataset Overview", width="stretch"):
+                st.session_state.current_page = "📁 Dataset Overview"
+                st.rerun()
+
+        with col2:
+            if st.button("🗑 Clear Dataset", width="stretch"):
+                clear_uploaded_file()
 
 
 def clear_uploaded_file():

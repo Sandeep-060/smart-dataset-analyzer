@@ -1,6 +1,6 @@
 from src.pages.home import show_home_page
 from src.pages.overview import show_overview_page
-from src.pages.quality import show_quality_page
+from src.pages.data_quality import show_data_quality_page
 from src.pages.statistics import show_statistics_page
 from src.pages.visualizations import show_visualization_page
 from src.pages.correlation import show_correlation_page
@@ -18,7 +18,7 @@ def route_page(selected_page: str):
     routes = {
         "🏠 Home": show_home_page,
         "📁 Dataset Overview": show_overview_page,
-        "🧹 Data Quality": show_quality_page,
+        "🧹 Data Quality": show_data_quality_page,
         "📊 Statistics": show_statistics_page,
         "📈 Visualizations": show_visualization_page,
         "🔗 Correlation": show_correlation_page,
