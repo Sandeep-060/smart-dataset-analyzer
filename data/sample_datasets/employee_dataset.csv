@@ -1,9 +1,0 @@
-ID,Name,Age,Salary
-1,Alice,25,45000
-2,Bob,30,52000
-3,Charlie,28,48000
-4,David,35,61000
-5,Eve,29,50000
-6,Bob,30,52000
-7,Charlie,28,48000
-8,David,NULL,61000
