@@ -18,30 +18,43 @@ def show_report_page():
 
     st.success("Dataset ready for report generation.")
 
-    st.divider()
 
-    st.subheader("Report Contents")
+    st.markdown("### 📑 Report Contents")
 
+    st.caption(
+        "The generated PDF provides a comprehensive summary of the uploaded dataset."
+    )
     st.markdown("""
 The generated PDF includes:
 
-- Dataset Overview
-- Dataset Statistics
-- Missing Value Analysis
-- Data Quality Summary
-- Correlation Summary
-- Outlier Summary
-- Feature Engineering Recommendations
-- Dataset Health Score
-- Improvement Suggestions
+- 📁 Dataset Overview
 
-The report intentionally excludes interactive charts because they depend on user selections and would not represent the entire dataset fairly.
+- 📊 Descriptive Statistics
+
+- 🧹 Missing Value Analysis
+
+- ✅ Data Quality Summary
+
+- 🔗 Correlation Summary
+
+- ⚠ Outlier Detection Summary
+
+- ⚙️ Feature Engineering Recommendations
+
+- ❤️ Dataset Health Score
+
+- 💡 Improvement Suggestions
+
 """)
+    st.info(
+        "Interactive charts are excluded because they depend on user-selected columns and may not represent the entire dataset."
+    )
 
-    st.divider()
+    st.markdown("### 📥 Generate PDF Report")
 
-    st.subheader("Generate Report")
-
+    st.caption(
+        "Generate and download a professional PDF report for the uploaded dataset."
+    )
     if st.button(
         "Generate PDF Report",
         type="primary",

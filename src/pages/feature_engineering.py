@@ -19,10 +19,10 @@ def show_feature_engineering_page():
 
     st.success("Dataset loaded successfully!")
 
-    st.divider()
 
-    st.subheader("Recommendation Summary")
+    st.markdown("### 📊 Recommendation Summary")
 
+    st.caption("Overview of potential feature engineering improvements identified in the dataset.")
     total = len(recommendations)
 
     missing = (recommendations["Issue"] == "Missing Values").sum()
@@ -45,10 +45,12 @@ def show_feature_engineering_page():
     c4.metric("Scaling", scaling)
     c5.metric("Date", dates)
 
-    st.divider()
 
-    st.subheader("Recommendations")
+    st.markdown("### 💡 Recommendations")
 
+    st.caption(
+        "Review the suggested preprocessing and feature engineering steps before training machine learning models."
+    )
     if recommendations.empty:
 
         st.success("🎉 No feature engineering recommendations found.")

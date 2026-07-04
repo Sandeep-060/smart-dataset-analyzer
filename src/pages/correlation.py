@@ -29,40 +29,39 @@ def show_correlation_page():
 
     st.success("Correlation analysis completed.")
 
-    st.divider()
+    st.markdown("### 📋 Correlation Matrix")
 
-    st.subheader("Correlation Matrix")
+    st.caption("Displays the correlation coefficient between every pair of numerical columns.")
+
 
     st.dataframe(
         correlation_matrix.round(2),
         width="stretch"
     )
 
-    st.divider()
+    st.markdown("### 🔥 Correlation Heatmap")
 
-    st.subheader("Correlation Heatmap")
+    st.caption("Color intensity indicates the strength of correlation.")
 
     heatmap = create_heatmap(correlation_matrix)
 
     st.pyplot(heatmap)
 
-    st.divider()
-
     positive, negative = get_strongest_relationships(
         correlation_matrix
     )
 
-    st.subheader("Strongest Positive Relationships")
+    st.markdown("### 📈 Strongest Positive Relationships")
 
+    st.caption("Highly positive correlated feature pairs.")
     st.dataframe(
         positive,
         width="stretch",
         hide_index=True
     )
 
-    st.divider()
-
-    st.subheader("Strongest Negative Relationships")
+    st.markdown("### 📉 Strongest Negative Relationships")
+    st.caption("Highly negative correlated feature pairs.")
 
     st.dataframe(
         negative,
@@ -70,9 +69,9 @@ def show_correlation_page():
         hide_index=True
     )
 
-    st.divider()
+    st.markdown("### 🎯 Interactive Scatter Plot")
 
-    st.subheader("Interactive Scatter Plot")
+    st.caption("Choose any two numerical columns to visualize their relationship.")
 
     numeric_columns = dataframe.select_dtypes(
         include="number"

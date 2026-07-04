@@ -21,9 +21,9 @@ def show_statistics_page():
 
     st.success("Dataset loaded successfully!")
 
-    st.divider()
 
-    st.subheader("Select Numerical Column")
+    st.markdown("### 🔢 Numerical Statistics")
+    st.caption("Select a numerical column to view descriptive statistical .")
 
     numeric_columns = df.select_dtypes(include="number").columns.tolist()
 
@@ -36,11 +36,10 @@ def show_statistics_page():
         numeric_columns
     )
 
-    st.divider()
 
     statistics = calculate_statistics(df[selected_column])
 
-    st.subheader(f"📈 Statistics for '{selected_column}'")
+    st.markdown(f"### 📈 Statistics for **{selected_column}**")
 
     col1, col2, col3 = st.columns(3)
 
@@ -66,10 +65,10 @@ def show_statistics_page():
         st.metric("Skewness", f"{statistics['Skewness']:.2f}")
         st.metric("Kurtosis", f"{statistics['Kurtosis']:.2f}")
 
-    st.divider()
 
-    st.subheader("🏷 Categorical Statistics")
 
+    st.markdown("### 🏷️ Categorical Statistics")
+    st.caption("Select a categorical column to explore category distribution.")
     categorical_columns = df.select_dtypes(exclude="number").columns.tolist()
     if len(categorical_columns) == 0:
         st.info("No categorical columns found.")
@@ -95,8 +94,9 @@ def show_statistics_page():
             "Most Common",
             category_statistics["Most Common"]
         )
-    st.subheader("Frequency Table")
+    st.markdown("### 📋 Frequency Table")
 
+    st.caption("Frequency distribution of values in the selected categorical .")
     st.dataframe(
         category_statistics["Frequency Table"],
         width="stretch",

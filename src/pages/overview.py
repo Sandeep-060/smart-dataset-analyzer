@@ -19,8 +19,9 @@ def show_overview_page():
     rows, columns = dataframe.shape
     memory_usage = dataframe.memory_usage(deep=True).sum()
     memory_kb = memory_usage / 1024
-    st.subheader("📌 Dataset Information")
-    st.info(f"📄 Dataset: {st.session_state.dataset_name}")
+    st.markdown("### 📌 Dataset Information")
+    st.info(f"**Dataset:** {st.session_state.dataset_name}")
+
     col1, col2, col3 = st.columns(3)
     with col1:
         st.metric(
@@ -40,10 +41,8 @@ def show_overview_page():
             value=f"{memory_kb:.2f} KB"
         )
 
-    st.divider()
-
     # Quick Summary
-    st.subheader("⚡ Quick Summary")
+    st.markdown("### ⚡ Quick Summary")
     missing_values = dataframe.isnull().sum().sum()
     duplicate_rows = dataframe.duplicated().sum()
     numeric_columns = dataframe.select_dtypes(include="number").shape[1]
@@ -74,10 +73,10 @@ def show_overview_page():
             categorical_columns
         )
 
-    st.divider()
 
     # Column Data Types
-    st.subheader("🧾 Column Data Types")
+    st.markdown("### 🧾 Column Data Types")
+    st.caption("Data type detected for every column in the uploaded dataset.")
     dtype_dataframe = dataframe.dtypes.reset_index()
     dtype_dataframe.columns = ["Column", "Data Type"]
     dtype_dataframe["Data Type"] = dtype_dataframe["Data Type"].astype(str)
@@ -88,10 +87,10 @@ def show_overview_page():
     )
 
 
-    st.divider()
 
     # Dataset Preview
-    st.subheader("👀 Dataset Preview")
+    st.markdown("### 👀 Dataset Preview")
+    st.caption("Preview the first few rows of your dataset.")
     preview_rows = st.slider(
         "Number of rows to preview",
         min_value=5,

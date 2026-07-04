@@ -34,7 +34,9 @@ def show_data_quality_page():
         else 100
     )
 
-    st.subheader("📊 Missing Values Summary")
+
+    st.markdown("### 📊 Missing Values Summary")
+    st.caption("Overview of missing values detected in the uploaded dataset.")
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         st.metric(
@@ -60,16 +62,15 @@ def show_data_quality_page():
             f"{completeness:.2f}%"
         )
 
-    st.divider()
-
-    st.subheader("Missing Values Summary")
+    st.markdown("### 📋 Missing Values by Column")
+    st.caption("Shows the number of missing values present in every column.")
 
     st.dataframe(
         missing_df,
         width="stretch",
         hide_index=True
     )
-    st.subheader("Missing Values Visualization")
+    st.markdown("### 📈 Missing Values Visualization")
 
     chart_data = missing_df[missing_df["Missing Values"] > 0]
 
@@ -81,9 +82,10 @@ def show_data_quality_page():
             width="stretch"
         )
     
-    st.divider()
 
-    st.subheader("📋 Quality Summary")
+    st.markdown("### 📋 Dataset Quality Summary")
+
+    st.caption("Additional quality indicators for the uploaded dataset.")
 
     summary = get_quality_summary(df)
 
@@ -114,10 +116,11 @@ def show_data_quality_page():
             len(summary["heavy_columns"])
         )
 
-    st.divider()
 
-    st.subheader("💾 Memory Heavy Columns")
 
+    st.markdown("### 💾 Memory Heavy Columns")
+
+    st.caption("Columns consuming relatively higher memory.")
     if len(summary["heavy_columns"]) == 0:
         st.success("No memory-heavy columns found.")
     else:

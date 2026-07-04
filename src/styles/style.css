@@ -1,0 +1,186 @@
+/* SMART DATASET ANALYZER - GLOBAL UI */
+
+
+/* Main Layout  */
+.block-container{
+    max-width:1100px;
+    padding-top:1.2rem;
+    padding-bottom:2rem;
+    padding-left:2.3rem;
+    padding-right:2.3rem;
+}
+
+
+/* Typography  */
+
+h1{
+    font-size:2.15rem !important;
+    font-weight:700 !important;
+    margin-bottom:0.25rem !important;
+}
+
+h2{
+    font-size:1.45rem !important;
+    font-weight:650 !important;
+    margin-top:0.35rem !important;
+    margin-bottom:0.2rem !important;
+}
+
+h3{
+    font-size:1.18rem !important;
+    font-weight:600 !important;
+    margin-top:0.4rem !important;
+    margin-bottom:0.35rem !important;
+}
+
+
+p{
+    font-size:1.12rem;
+    line-height:1.75;
+    color:#374151;
+}
+li{
+    font-size:1.10rem;
+    line-height:1.8;
+    color:#1F2937;
+    margin-bottom:0.35rem;
+}
+
+/*  Caption  */
+[data-testid="stCaptionContainer"]{
+    margin-bottom:0.35rem;
+    font-size:0.98rem;
+}
+
+/*  SIDEBAR  */
+section[data-testid="stSidebar"]{
+    border-right:1px solid #E5E7EB;
+}
+
+section[data-testid="stSidebar"] .block-container{
+    padding-top:0.8rem;
+    padding-left:1rem;
+    padding-right:1rem;
+    padding-bottom:1.5rem;
+}
+
+/* Navigation heading */
+section[data-testid="stSidebar"] h2{
+    font-size:1.45rem !important;
+    font-weight:700 !important;
+    color:#111827 !important;
+    margin-bottom:0.15rem !important;
+}
+
+/* Caption */
+section[data-testid="stSidebar"] p{
+    font-size:1rem !important;
+    color:#4B5563 !important;
+    line-height:1.55 !important;
+}
+
+
+
+/* Every radio item */
+section[data-testid="stSidebar"] div[role="radiogroup"] label{
+    padding-top:9px !important;
+    padding-bottom:9px !important;
+    margin-bottom:4px !important;
+    border-radius:8px;
+    transition:all .2s ease;
+}
+
+/* Hover */
+section[data-testid="stSidebar"] div[role="radiogroup"] label:hover{
+    background:#F3F4F6;
+}
+
+/* Radio text */
+section[data-testid="stSidebar"] div[role="radiogroup"] p{
+    font-size:1rem !important;
+    font-weight:500 !important;
+    color:#111827 !important;
+
+}
+
+/* Reduce spacing between sidebar widgets */
+
+section[data-testid="stSidebar"] .element-container{
+    margin-bottom:0.2rem !important;
+}
+
+section[data-testid="stSidebar"] hr{
+    margin-top:0.35rem !important;
+    margin-bottom:0.35rem !important;
+}
+
+section[data-testid="stSidebar"] div[data-baseweb="radio"]{
+    margin-top:0 !important;
+}
+
+
+/*  Buttons  */
+
+.stButton>button,
+.stDownloadButton>button{
+    width:100%;
+    border-radius:10px;
+    padding:0.65rem;
+    font-weight:600;
+    transition:0.18s ease;
+    border:1px solid rgba(120,120,120,.20);
+}
+
+.stButton>button:hover,
+.stDownloadButton>button:hover{
+    transform:translateY(-1px);
+}
+
+
+/*  Metric Cards  */
+
+div[data-testid="stMetric"]{
+    border:1px solid rgba(150,150,150,.18);
+    border-radius:12px;
+    padding:16px;
+    background:rgba(255,255,255,.35);
+}
+
+/*  DataFrames  */
+
+div[data-testid="stDataFrame"]{
+    border-radius:10px;
+    overflow:hidden;
+}
+
+
+/*  Notifications  */
+div[data-baseweb="notification"]{
+    border-radius:10px;
+}
+
+
+/*  Expanders  */
+details{
+    border-radius:10px;
+}
+
+
+/*  Progress Bar  */
+div[data-testid="stProgressBar"]{
+    margin-top:0.5rem;
+    margin-bottom:1rem;
+}
+
+
+/*  Divider  */
+hr{
+    margin-top:0.65rem;
+    margin-bottom:0.65rem;
+}
+
+
+/*  General Element Spacing  */
+.element-container{
+    margin-bottom:0.35rem;
+}

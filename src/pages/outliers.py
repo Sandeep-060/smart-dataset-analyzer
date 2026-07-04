@@ -6,7 +6,6 @@ from src.services.outlier_detector import (
     create_outlier_boxplot
 )
 
-
 def show_outliers_page():
     """
     Displays the Outlier Detection page.
@@ -31,9 +30,9 @@ def show_outliers_page():
 
     st.success("Dataset loaded successfully.")
 
-    st.divider()
+    st.markdown("### ⚙️ Detection Settings")
 
-
+    st.caption("Select a numerical column and choose an outlier detection method.")
     # Column Selection
     selected_column = st.selectbox(
         "Select Numerical Column",
@@ -62,9 +61,11 @@ def show_outliers_page():
             selected_column
         )
 
-    st.divider()
-
     # Summary Cards
+
+    st.markdown("### 📊 Detection Summary")
+
+    st.caption("Summary of the detected outliers for the selected column.")
 
     col1, col2 = st.columns(2)
 
@@ -80,9 +81,9 @@ def show_outliers_page():
             f'{result["percentage"]}%'
         )
 
-    st.divider()
-
     # Method Information
+    st.markdown(f"### 🔍 {method} Details")
+
     if method == "IQR":
 
         col1, col2 = st.columns(2)
@@ -106,12 +107,11 @@ def show_outliers_page():
             result["threshold"]
         )
 
-    st.divider()
-
     # Outlier Table
 
-    st.subheader("Detected Outliers")
+    st.markdown("### 📋 Detected Outliers")
 
+    st.caption("Rows identified as outliers using the selected detection method.")
     if result["outliers"].empty:
 
         st.success(
@@ -120,11 +120,6 @@ def show_outliers_page():
 
     else:
 
-        # st.dataframe(
-        #     result["outliers"],
-        #     width="stretch",
-        #     hide_index=True
-        # )
 
         display_df = result["outliers"][[selected_column]].copy()
         display_df.insert(0, "Row Index", result["outliers"].index)
@@ -134,10 +129,9 @@ def show_outliers_page():
             width="stretch",
             hide_index=True
         )
-    st.divider()
+    st.markdown("### 📦 Box Plot")
 
-    st.subheader("Box Plot")
-
+    st.caption("Visual representation of the data distribution and detected outliers.")
     figure = create_outlier_boxplot(
         dataframe,
         selected_column

@@ -10,8 +10,6 @@ from src.services.visualization_service import (
     create_missing_value_chart
 )
 
-
-
 def show_visualization_page():
     """
     Visualization Dashboard
@@ -27,12 +25,11 @@ def show_visualization_page():
 
     st.success("Dataset loaded successfully!")
 
-    st.divider()
-
     numerical_columns = get_numerical_columns(dataframe)
     categorical_columns = get_categorical_columns(dataframe)
 
-    st.subheader("Numerical Visualizations")
+    st.markdown("### 📊 Numerical Visualizations")
+    st.caption("Visualize the distribution and spread of numerical columns.")
 
     if numerical_columns:
 
@@ -44,12 +41,10 @@ def show_visualization_page():
         st.markdown("### 📊 Histogram")
         histogram = create_histogram(dataframe,selected_numeric)
         st.pyplot(histogram)
-        st.divider()
 
         st.markdown("### 📈 KDE Plot")
         kde = create_kde_plot(dataframe,selected_numeric)
         st.pyplot(kde)
-        st.divider()
 
         st.markdown("### 📦 Box Plot")
         boxplot = create_boxplot(dataframe,selected_numeric)
@@ -60,8 +55,8 @@ def show_visualization_page():
         st.warning("No numerical columns found.")
 
 
-    st.divider()
-    st.header("📊 Categorical Visualization")
+    st.markdown("### 🏷️ Categorical Visualization")
+    st.caption("Visualize the frequency distribution of categorical values.")
     categorical_columns = dataframe.select_dtypes(exclude="number").columns.tolist()
 
     if categorical_columns:
@@ -81,8 +76,8 @@ def show_visualization_page():
 
         st.info("No categorical columns found.")
 
-    st.divider()
-    st.header("🧹 Missing Value Visualization")
+    st.markdown("### 🧹 Missing Value Visualization")
+    st.caption("Identify columns containing missing values.")
     missing_chart = create_missing_value_chart(dataframe)
 
     if missing_chart is None:

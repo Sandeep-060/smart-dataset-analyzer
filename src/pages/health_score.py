@@ -20,11 +20,14 @@ def show_health_score_page():
 
     st.success("Dataset analyzed successfully.")
 
-    st.divider()
 
     # Overall Score
-    st.subheader("Overall Health Score")
 
+    st.markdown("### 🎯 Overall Health Score")
+
+    st.caption(
+        "A combined score representing the overall quality and machine learning readiness of the dataset."
+    )
     st.metric(
         "Dataset Score",
         f"{result['Overall Score']}/100"
@@ -55,11 +58,13 @@ def show_health_score_page():
         • ML Readiness (20)
         """)
 
-    st.divider()
 
     # Score Breakdown
-    st.subheader("Score Breakdown")
+    st.markdown("### 📊 Score Breakdown")
 
+    st.caption(
+        "Individual component scores contributing to the overall health score."
+    )
     c1, c2, c3, c4, c5 = st.columns(5)
 
     c1.metric("Missing", result["Missing Values"])
@@ -68,21 +73,25 @@ def show_health_score_page():
     c4.metric("Structure",result["Dataset Completeness"])
     c5.metric("ML Ready",result["Feature Engineering"])
 
-    st.divider()
 
     # Quality Indicators
-    st.subheader("Quality Indicators")
+    st.markdown("### ✅ Quality Indicators")
 
+    st.caption(
+        "Positive observations identified in the uploaded dataset."
+    )
     indicators = result["indicators"]
 
     for indicator in indicators:
         st.write(indicator)
 
-    st.divider()
 
     # Improvement Suggestions
-    st.subheader("Improvement Suggestions")
+    st.markdown("### 💡 Improvement Suggestions")
 
+    st.caption(
+        "Recommendations to improve the overall quality of your dataset."
+    )
     suggestions = result["suggestions"]
 
     if len(suggestions) == 0:
