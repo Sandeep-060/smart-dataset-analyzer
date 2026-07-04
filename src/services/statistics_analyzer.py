@@ -69,3 +69,24 @@ def calculate_categorical_statistics(series: pd.Series):
             }
         )
     }
+
+def get_dataset_statistics_summary(df: pd.DataFrame):
+    """
+    Returns overall dataset statistics
+    (not column-wise).
+    """
+
+    memory = (
+        df.memory_usage(deep=True).sum()
+        / (1024 * 1024)
+    )
+
+    return {
+        "Rows": len(df),
+        "Columns": df.shape[1],
+        "Numerical Columns":
+            len(df.select_dtypes(include="number").columns),
+        "Categorical Columns":
+            len(df.select_dtypes(exclude="number").columns),
+        "Memory (MB)": round(memory, 2)
+    }
