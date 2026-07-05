@@ -16,23 +16,6 @@ https://smart-dataset-analyzer-v1.streamlit.app/
 
 ---
 
-## 📸 Screenshots
-
-> Screenshots will be added after deployment.
-
-- Home Page
-- Dataset Overview
-- Data Quality Analysis
-- Statistics
-- Visualizations
-- Correlation Analysis
-- Outlier Detection
-- Feature Engineering
-- Health Score
-- PDF Report
-
----
-
 # ✨ Features
 
 ## 📁 Dataset Upload
@@ -303,6 +286,60 @@ LinkedIn:
 
 >https://linkedin.com/in/sandeep-tharala-7291022b8
 
+---
+
+## 📸 Screenshots
+
+## 📸 Application Preview
+
+### Home
+
+![Home](assets/0-home.png)
+![Home](assets/1-home.png)
+
+### Dataset Overview
+
+![Overview](assets/2-overview.png)
+
+### Data Quality
+
+![Quality](assets/3-quality.png)
+![Quality](assets/4-quality.png)
+
+### Statistics
+
+![Statistics](assets/5-stats.png)
+![Statistics](assets/6-stats.png)
+
+### Visualizations
+
+![Visualization](assets/7-visualization.png)
+![Visualization](assets/8-visualization.png)
+![Visualization](assets/9-visualization.png)
+![Visualization](assets/10-visualization.png)
+
+### Correlation
+
+![Correlation](assets/11-correlation.png)
+![Correlation](assets/12-correlation.png)
+![Correlation](assets/13-correlation.png)
+
+### Outliers
+
+![Outliers](assets/14-outliers.png)
+![Outliers](assets/15-outliers.png)
+
+### Feature Engineering
+
+![Outliers](assets/16-feature%20engineering.png)
+
+### Health Score
+
+![Health Score](assets//17-health%20score.png)
+
+### Report
+
+![Outliers](assets/18-report.png)
 ---
 
 # ⭐ Support
