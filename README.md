@@ -9,10 +9,9 @@ The application is designed to help students, data analysts, and machine learnin
 ## 🌐 Live Demo
 
 🚀 **Application:**  
-> **Coming Soon** *(Will be updated after deployment)*
 
 ```
-https://your-streamlit-app-link.streamlit.app
+https://smart-dataset-analyzer-v1.streamlit.app/
 ```
 
 ---
