@@ -19,7 +19,8 @@ def load_css():
     Loads global CSS styling.
     """
 
-    css_file = Path("src/styles/style.css")
+
+    css_file = Path(__file__).parent / "src" / "styles" / "style.css"
 
     with open(css_file) as f:
         st.markdown(
