@@ -313,16 +313,16 @@ LinkedIn:
 
 ### Visualizations
 
-![Visualization](assets/7-visualization.png)
-![Visualization](assets/8-visualization.png)
-![Visualization](assets/9-visualization.png)
-![Visualization](assets/10-visualization.png)
+![Visualization](assets/7-Visualization.png)
+![Visualization](assets/8-Visualization.png)
+![Visualization](assets/9-Visualization.png)
+![Visualization](assets/10-Visualization.png)
 
 ### Correlation
 
-![Correlation](assets/11-correlation.png)
-![Correlation](assets/12-correlation.png)
-![Correlation](assets/13-correlation.png)
+![Correlation](assets/11-Correlation.png)
+![Correlation](assets/12-Correlation.png)
+![Correlation](assets/13-Correlation.png)
 
 ### Outliers
 
